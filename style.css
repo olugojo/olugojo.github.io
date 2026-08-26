@@ -11,10 +11,8 @@
   /* Color */
   --bg: #10171b;
   --bg-alt: #182228;
-  --bg-overlay: rgba(16, 23, 27, 0.86);
-  --bg-alt-overlay: rgba(24, 34, 40, 0.88);
-  --text: #eef2f1;
-  --text-muted: #a7b3b1;
+  --text: #f7f34c;        /* lemon yellow — primary text color across the page */
+  --text-muted: #cfc94a;  /* dimmer lemon for secondary text, keeps hierarchy */
   --accent: #e0a458;
   --accent-soft: #f2c98a;
   --border: #29343a;
@@ -142,7 +140,6 @@ button:focus-visible {
 .hero {
   padding: var(--space-12) 0 var(--space-8);
   border-bottom: 1px solid var(--border);
-  background: var(--bg-overlay);
 }
 
 .hero h1 {
@@ -184,11 +181,10 @@ nav a:hover {
 
 .section {
   padding: var(--space-10) 0;
-  background: var(--bg-overlay);
 }
 
 .section.alt {
-  background: var(--bg-alt-overlay);
+  background: transparent;
 }
 
 .section h2 {
@@ -210,7 +206,7 @@ nav a:hover {
 }
 
 .project-card {
-  background: var(--bg-overlay);
+  background: transparent;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: var(--space-5);
@@ -238,7 +234,7 @@ nav a:hover {
 
 .project-card a {
   font-family: var(--font-body);
-  color: var(--accent);
+  color: var(--text);
   text-decoration: underline;
   text-underline-offset: 2px;
   font-size: var(--text-sm);
@@ -255,7 +251,7 @@ nav a:hover {
 }
 
 #contact a {
-  color: var(--accent);
+  color: var(--text);
   text-decoration: underline;
   text-underline-offset: 2px;
   font-weight: 500;
@@ -270,7 +266,6 @@ footer {
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: var(--text-xs);
-  background: var(--bg-overlay);
 }
 
 /* Mobile: tighten the scale slightly so headings don't overwhelm small screens */

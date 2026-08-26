@@ -15,6 +15,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="hero">
+    <canvas id="matrix-bg" aria-hidden="true"></canvas>
     <div class="container">
       <h1>Ojo Olugbenga Toheeb</h1>
       <p class="tagline">What you do, in one clear line.</p>
@@ -90,6 +91,70 @@
       <p>&copy; 2026 Ojo Olugbenga Toheeb. Built with GitHub Pages.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var canvas = document.getElementById('matrix-bg');
+      if (!canvas) return;
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var ctx = canvas.getContext('2d');
+      var hero = canvas.parentElement;
+      var fontSize = 16;
+      var chars = '01アイウエオカキクケコサシスセソ{}<>/;=+-*'.split('');
+      var columns, drops;
+
+      function resize() {
+        canvas.width = hero.offsetWidth;
+        canvas.height = hero.offsetHeight;
+        columns = Math.floor(canvas.width / fontSize);
+        drops = new Array(columns).fill(0).map(function () {
+          return Math.floor(Math.random() * -50);
+        });
+      }
+
+      function draw() {
+        ctx.fillStyle = 'rgba(16, 23, 27, 0.15)'; /* matches --bg, fades trailing glyphs */
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.font = fontSize + 'px monospace';
+
+        for (var i = 0; i < drops.length; i++) {
+          var text = chars[Math.floor(Math.random() * chars.length)];
+          var x = i * fontSize;
+          var y = drops[i] * fontSize;
+
+          /* Lead character brighter, rest fades toward the accent color */
+          ctx.fillStyle = Math.random() > 0.95 ? '#f2c98a' : 'rgba(224, 164, 88, 0.55)';
+          ctx.fillText(text, x, y);
+
+          if (y > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+
+      if (reduceMotion) {
+        /* Draw a single static frame instead of a continuous loop */
+        draw();
+        return;
+      }
+
+      var interval = setInterval(draw, 50);
+
+      /* Pause when the tab isn't visible to save battery/CPU */
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          clearInterval(interval);
+        } else {
+          interval = setInterval(draw, 50);
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>

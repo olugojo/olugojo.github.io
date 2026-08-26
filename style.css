@@ -11,6 +11,8 @@
   /* Color */
   --bg: #10171b;
   --bg-alt: #182228;
+  --bg-overlay: rgba(16, 23, 27, 0.86);
+  --bg-alt-overlay: rgba(24, 34, 40, 0.88);
   --text: #eef2f1;
   --text-muted: #a7b3b1;
   --accent: #e0a458;
@@ -70,9 +72,19 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  background: var(--bg);
+  background: var(--bg); /* fallback if canvas/JS fails to load */
   color: var(--text);
   line-height: 1.6;
+}
+
+/* Fixed, full-page canvas sits behind all content */
+#matrix-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* never intercepts clicks/taps meant for content above it */
+  z-index: -1;
 }
 
 /* All headings use the display face; everything else uses body */
@@ -128,24 +140,9 @@ button:focus-visible {
 }
 
 .hero {
-  position: relative;
-  overflow: hidden;
   padding: var(--space-12) 0 var(--space-8);
   border-bottom: 1px solid var(--border);
-}
-
-#matrix-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* never intercepts clicks/taps meant for content above it */
-  z-index: 0;
-}
-
-.hero .container {
-  position: relative;
-  z-index: 1; /* keeps text and nav above the canvas */
+  background: var(--bg-overlay);
 }
 
 .hero h1 {
@@ -187,10 +184,11 @@ nav a:hover {
 
 .section {
   padding: var(--space-10) 0;
+  background: var(--bg-overlay);
 }
 
 .section.alt {
-  background: var(--bg-alt);
+  background: var(--bg-alt-overlay);
 }
 
 .section h2 {
@@ -212,7 +210,7 @@ nav a:hover {
 }
 
 .project-card {
-  background: var(--bg);
+  background: var(--bg-overlay);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: var(--space-5);
@@ -272,6 +270,7 @@ footer {
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: var(--text-xs);
+  background: var(--bg-overlay);
 }
 
 /* Mobile: tighten the scale slightly so headings don't overwhelm small screens */

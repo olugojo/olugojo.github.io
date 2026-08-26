@@ -12,10 +12,11 @@
 </head>
 <body>
 
+  <canvas id="matrix-bg" aria-hidden="true"></canvas>
+
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="hero">
-    <canvas id="matrix-bg" aria-hidden="true"></canvas>
     <div class="container">
       <h1>Ojo Olugbenga Toheeb</h1>
       <p class="tagline">What you do, in one clear line.</p>
@@ -99,14 +100,13 @@
 
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var ctx = canvas.getContext('2d');
-      var hero = canvas.parentElement;
       var fontSize = 16;
       var chars = '01アイウエオカキクケコサシスセソ{}<>/;=+-*'.split('');
       var columns, drops;
 
       function resize() {
-        canvas.width = hero.offsetWidth;
-        canvas.height = hero.offsetHeight;
+        canvas.width = window.innerWidth;
+        canvas.height = document.documentElement.scrollHeight;
         columns = Math.floor(canvas.width / fontSize);
         drops = new Array(columns).fill(0).map(function () {
           return Math.floor(Math.random() * -50);
@@ -136,6 +136,7 @@
 
       resize();
       window.addEventListener('resize', resize);
+      window.addEventListener('load', resize);
 
       if (reduceMotion) {
         /* Draw a single static frame instead of a continuous loop */

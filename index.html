@@ -4,15 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name — projects, background, and contact info." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="hero">
     <div class="container">
       <h1>Your Name</h1>
       <p class="tagline">What you do, in one clear line.</p>
-      <nav>
+      <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -20,54 +23,64 @@
     </div>
   </header>
 
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About</h2>
-      <p>
-        A couple of sentences about who you are, what you're interested in,
-        and what you're currently working on or learning. Keep it short and
-        human — this isn't a resume.
-      </p>
-    </div>
-  </section>
+  <main id="main">
 
-  <section id="projects" class="section alt">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-
-        <div class="project-card">
-          <h3>Project One</h3>
-          <p>Short description of the problem, your role, and the outcome.</p>
-          <a href="https://github.com/yourusername/project-one" target="_blank">View on GitHub →</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Project Two</h3>
-          <p>Short description of the problem, your role, and the outcome.</p>
-          <a href="https://github.com/yourusername/project-two" target="_blank">View on GitHub →</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Project Three</h3>
-          <p>Short description of the problem, your role, and the outcome.</p>
-          <a href="https://github.com/yourusername/project-three" target="_blank">View on GitHub →</a>
-        </div>
-
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About</h2>
+        <p>
+          A couple of sentences about who you are, what you're interested in,
+          and what you're currently working on or learning. Keep it short and
+          human — this isn't a resume.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>
-        <a href="mailto:you@example.com">you@example.com</a> ·
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a> ·
-        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-      </p>
-    </div>
-  </section>
+    <section id="projects" class="section alt" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading">Projects</h2>
+        <ul class="project-grid">
+
+          <li class="project-card">
+            <h3>Project One</h3>
+            <p>Short description of the problem, your role, and the outcome.</p>
+            <a href="https://github.com/yourusername/project-one" target="_blank" rel="noopener noreferrer">
+              View on GitHub<span class="visually-hidden"> (Project One, opens in new tab)</span>
+            </a>
+          </li>
+
+          <li class="project-card">
+            <h3>Project Two</h3>
+            <p>Short description of the problem, your role, and the outcome.</p>
+            <a href="https://github.com/yourusername/project-two" target="_blank" rel="noopener noreferrer">
+              View on GitHub<span class="visually-hidden"> (Project Two, opens in new tab)</span>
+            </a>
+          </li>
+
+          <li class="project-card">
+            <h3>Project Three</h3>
+            <p>Short description of the problem, your role, and the outcome.</p>
+            <a href="https://github.com/yourusername/project-three" target="_blank" rel="noopener noreferrer">
+              View on GitHub<span class="visually-hidden"> (Project Three, opens in new tab)</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Contact</h2>
+        <p>
+          <a href="mailto:you@example.com">you@example.com</a> ·
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in new tab)</span></a> ·
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
+        </p>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
     <div class="container">

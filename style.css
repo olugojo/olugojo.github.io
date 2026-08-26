@@ -2,9 +2,10 @@
   --bg: #0f1115;
   --bg-alt: #15181f;
   --text: #e8e9ec;
-  --text-muted: #9aa0ab;
+  --text-muted: #b7bcc5; /* lightened from #9aa0ab for better contrast on dark bg */
   --accent: #6ee7b7;
   --border: #262a33;
+  --focus: #ffd166;
   --max-width: 800px;
 }
 
@@ -12,6 +13,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -25,6 +41,44 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* Skip link: hidden until focused, lets keyboard users bypass nav */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--focus);
+  color: #0f1115;
+  padding: 12px 20px;
+  z-index: 100;
+  font-weight: 700;
+  border-radius: 0 0 6px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* Visible focus outline for every interactive element */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Screen-reader-only text: announced by assistive tech, invisible visually */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero {
@@ -75,6 +129,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  list-style: none; /* project-grid is now a <ul>; remove bullets */
 }
 
 .project-card {
@@ -103,14 +158,14 @@ nav a:hover {
 
 .project-card a {
   color: var(--accent);
-  text-decoration: none;
+  text-decoration: underline; /* underline links so color isn't the only cue */
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 #contact a {
   color: var(--accent);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 footer {

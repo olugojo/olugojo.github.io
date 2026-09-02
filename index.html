@@ -18,11 +18,17 @@
 
   <header class="hero">
     <div class="container">
-      <div class="profile-photo">
-        <!-- Replace this placeholder with your real photo:
-             <img src="images/profile.jpg" alt="Ojo Olugbenga Toheeb" /> -->
-        <span aria-hidden="true">OT</span>
-      </div>
+      <input
+        type="file"
+        id="photo-upload"
+        accept="image/*"
+        class="visually-hidden"
+      />
+      <label for="photo-upload" class="profile-photo" id="profile-photo-box">
+        <span id="profile-photo-placeholder" aria-hidden="true">OT</span>
+        <img id="profile-photo-img" alt="Ojo Olugbenga Toheeb" hidden />
+        <span class="profile-photo-edit" aria-hidden="true">📷</span>
+      </label>
       <h1>Ojo Olugbenga Toheeb</h1>
       <p class="tagline">AI Engineering Trainee — learning to build and deploy real-world AI systems.</p>
       <nav aria-label="Primary">
@@ -99,6 +105,46 @@
       <p>&copy; 2026 Ojo Olugbenga Toheeb. Built with GitHub Pages.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var input = document.getElementById('photo-upload');
+      var img = document.getElementById('profile-photo-img');
+      var placeholder = document.getElementById('profile-photo-placeholder');
+      var STORAGE_KEY = 'portfolioProfilePhoto';
+
+      function showPhoto(dataUrl) {
+        img.src = dataUrl;
+        img.hidden = false;
+        placeholder.hidden = true;
+      }
+
+      /* Restore a previously chosen photo on this browser/device, if any */
+      try {
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) showPhoto(saved);
+      } catch (e) {
+        /* localStorage unavailable (private browsing, etc.) — placeholder stays visible */
+      }
+
+      input.addEventListener('change', function () {
+        var file = input.files && input.files[0];
+        if (!file) return;
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var dataUrl = e.target.result;
+          showPhoto(dataUrl);
+          try {
+            localStorage.setItem(STORAGE_KEY, dataUrl);
+          } catch (e) {
+            /* storage full or unavailable — preview still works this session */
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    })();
+  </script>
 
   <script>
     (function () {

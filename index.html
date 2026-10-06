@@ -1,214 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ojo Olugbenga Toheeb — Portfolio</title>
-  <meta name="description" content="Portfolio of Your Name — projects, background, and contact info." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c36">
+  <title>Ojo Olugbenga Toheeb | AI Engineering Portfolio</title>
+  <meta name="description" content="Meet Ojo Olugbenga Toheeb, an AI engineering trainee developing hands-on skills in machine learning, model integration, and applied AI.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <canvas id="matrix-bg" aria-hidden="true"></canvas>
-
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <header class="hero">
-    <div class="container">
-      <input
-        type="file"
-        id="photo-upload"
-        accept="image/*"
-        class="visually-hidden"
-      />
-      <label for="photo-upload" class="profile-photo" id="profile-photo-box">
-        <span id="profile-photo-placeholder" aria-hidden="true">OT</span>
-        <img id="profile-photo-img" alt="Ojo Olugbenga Toheeb" hidden />
-        <span class="profile-photo-edit" aria-hidden="true">📷</span>
-      </label>
-      <h1>Ojo Olugbenga Toheeb</h1>
-      <p class="tagline">AI Engineering Trainee — learning to build and deploy real-world AI systems.</p>
-      <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Ojo Olugbenga Toheeb, home"><span class="monogram">OT<span>.</span></span><span class="brand-caption">AI ENGINEERING<br>PORTFOLIO</span></a>
+      <nav aria-label="Main navigation"><a href="#about">About</a><a href="#projects">Learning projects</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
     </div>
   </header>
-
-  <main id="main">
-
-    <section id="about" class="section" aria-labelledby="about-heading">
-      <div class="container">
-        <h2 id="about-heading">About</h2>
-        <p>
-          I'm an AI Engineering Trainee, currently building hands-on skills in
-          machine learning, model integration, and applied AI development.
-          I'm focused on learning how to design, train, and deploy AI systems
-          that solve real problems — and I'm always working on projects that
-          push that further.
-        </p>
+  <main id="main" tabindex="-1">
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> AI ENGINEERING TRAINEE</p>
+        <h1 id="hero-title">Learning today.<br>Building for<br><em>the real world.</em></h1>
+        <p class="intro">I'm Ojo Olugbenga Toheeb. I'm developing the skills to turn AI ideas into practical systems — one experiment, one model, and one project at a time.</p>
+        <div class="hero-actions"><a class="button primary" href="#projects">Explore my learning <span aria-hidden="true">↗</span></a><a class="text-link" href="#contact">Let’s connect <span aria-hidden="true">→</span></a></div>
       </div>
+      <aside class="lab-card" aria-label="My learning process">
+        <div class="lab-top"><span><span class="status-dot" aria-hidden="true"></span> THE LEARNING LAB</span><span aria-hidden="true">01 / AI</span></div>
+        <div class="orbital" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="core">AI<span>IDEA → IMPACT</span></div><span class="node node-one"></span><span class="node node-two"></span><span class="node node-three"></span></div>
+        <div class="lab-bottom"><p>Curiosity. Code. Iteration.</p><span>A practical approach to applied AI.</span></div>
+      </aside>
     </section>
-
-    <section id="projects" class="section alt" aria-labelledby="projects-heading">
-      <div class="container">
-        <h2 id="projects-heading">Projects</h2>
-        <ul class="project-grid">
-
-          <li class="project-card">
-            <h3>Project One</h3>
-            <p>Short description of the problem, your role, and the outcome.</p>
-            <a href="https://github.com/olugojo/project-one" target="_blank" rel="noopener noreferrer">
-              View on GitHub<span class="visually-hidden"> (Project One, opens in new tab)</span>
-            </a>
-          </li>
-
-          <li class="project-card">
-            <h3>Project Two</h3>
-            <p>Short description of the problem, your role, and the outcome.</p>
-            <a href="https://github.com/olugojo/project-two" target="_blank" rel="noopener noreferrer">
-              View on GitHub<span class="visually-hidden"> (Project Two, opens in new tab)</span>
-            </a>
-          </li>
-
-          <li class="project-card">
-            <h3>Project Three</h3>
-            <p>Short description of the problem, your role, and the outcome.</p>
-            <a href="https://github.com/olugojo/project-three" target="_blank" rel="noopener noreferrer">
-              View on GitHub<span class="visually-hidden"> (Project Three, opens in new tab)</span>
-            </a>
-          </li>
-
-        </ul>
+    <div class="focus-strip"><div class="container"><span>MY LEARNING FOCUS</span><p>Machine learning <b aria-hidden="true">✳</b> Model integration <b aria-hidden="true">✳</b> Applied AI</p></div></div>
+    <section class="section container about" id="about" aria-labelledby="about-title">
+      <div><p class="eyebrow">01 / ABOUT ME</p><h2 id="about-title">A curious mind.<br>A practical approach.</h2></div>
+      <div class="about-copy"><p class="large-copy">I’m learning how to design, train, and deploy AI systems that solve real problems.</p><p>As an AI engineering trainee, I’m building hands-on experience in machine learning, model integration, and applied AI development. My focus is on understanding how things work, testing ideas, and improving through practice.</p><div class="approach"><span>Understand the problem</span><span>Build &amp; experiment</span><span>Learn &amp; improve</span></div></div>
+    </section>
+    <section class="projects-section" id="projects" aria-labelledby="projects-title"><div class="container section">
+      <div class="section-heading"><div><p class="eyebrow">02 / LEARNING PROJECTS</p><h2 id="projects-title">From ideas to experiments.</h2></div><a class="text-link" href="https://github.com/olugojo">My GitHub <span aria-hidden="true">↗</span></a></div>
+      <p class="section-intro">A roadmap for the work I want to explore. These are proposed learning projects; completed projects and results will be added here as they become available.</p>
+      <div class="project-grid">
+        <article class="project-card"><div class="project-art art-one" aria-hidden="true"><span class="art-number">01</span><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="art-label">DATA → INSIGHT</span></div><div class="project-body"><span class="badge">PROPOSED PROJECT</span><h3>Explore a machine learning model</h3><p>Work through data preparation, model training, and evaluation to understand what makes a useful prediction.</p><span class="project-topic">Machine learning / Evaluation</span></div></article>
+        <article class="project-card"><div class="project-art art-two" aria-hidden="true"><span class="art-number">02</span><div class="flow"><span>INPUT</span><b>→</b><span>AI</span><b>→</b><span>OUTPUT</span></div><span class="art-label">CONNECT THE PIECES</span></div><div class="project-body"><span class="badge">PROPOSED PROJECT</span><h3>Connect a model to an application</h3><p>Explore how an AI model can fit into a simple application, with clear inputs and useful outputs.</p><span class="project-topic">Model integration / Applied AI</span></div></article>
+        <article class="project-card"><div class="project-art art-three" aria-hidden="true"><span class="art-number">03</span><div class="target"><span>↗</span></div><span class="art-label">BUILD. TEST. IMPROVE.</span></div><div class="project-body"><span class="badge">PROPOSED PROJECT</span><h3>Take an experiment toward deployment</h3><p>Learn what it takes to make an AI prototype usable, from testing its behavior to sharing it with others.</p><span class="project-topic">Testing / Deployment</span></div></article>
       </div>
-    </section>
-
-    <section id="contact" class="section" aria-labelledby="contact-heading">
-      <div class="container">
-        <h2 id="contact-heading">Contact</h2>
-        <p>
-          <a href="mailto:ojoolugbengatoheeb@gmail.com">ojoolugbengatoheeb@gmail.com</a> ·
-          <a href="https://github.com/olugojo" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in new tab)</span></a> ·
-          <a href="https://www.linkedin.com/in/olugbenga-ojo-375765409/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
-        </p>
-      </div>
-    </section>
-
+    </div></section>
+    <section class="container section contact" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">03 / GET IN TOUCH</p><h2 id="contact-title">Let’s learn.<br>Let’s build something.</h2><p>Have an idea, a learning opportunity, or a useful perspective?<br>I’d love to hear from you.</p></div><div class="contact-links"><a href="mailto:ojoolugbengatoheeb@gmail.com"><span><small>EMAIL ME</small>ojoolugbengatoheeb@gmail.com</span><b aria-hidden="true">↗</b></a><a href="https://github.com/olugojo"><span>GitHub</span><b aria-hidden="true">↗</b></a><a href="https://www.linkedin.com/in/olugbenga-ojo-375765409/"><span>LinkedIn</span><b aria-hidden="true">↗</b></a></div></section>
   </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Ojo Olugbenga Toheeb. Built with GitHub Pages.</p>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      var input = document.getElementById('photo-upload');
-      var img = document.getElementById('profile-photo-img');
-      var placeholder = document.getElementById('profile-photo-placeholder');
-      var STORAGE_KEY = 'portfolioProfilePhoto';
-
-      function showPhoto(dataUrl) {
-        img.src = dataUrl;
-        img.hidden = false;
-        placeholder.hidden = true;
-      }
-
-      /* Restore a previously chosen photo on this browser/device, if any */
-      try {
-        var saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) showPhoto(saved);
-      } catch (e) {
-        /* localStorage unavailable (private browsing, etc.) — placeholder stays visible */
-      }
-
-      input.addEventListener('change', function () {
-        var file = input.files && input.files[0];
-        if (!file) return;
-
-        var reader = new FileReader();
-        reader.onload = function (e) {
-          var dataUrl = e.target.result;
-          showPhoto(dataUrl);
-          try {
-            localStorage.setItem(STORAGE_KEY, dataUrl);
-          } catch (e) {
-            /* storage full or unavailable — preview still works this session */
-          }
-        };
-        reader.readAsDataURL(file);
-      });
-    })();
-  </script>
-
-  <script>
-    (function () {
-      var canvas = document.getElementById('matrix-bg');
-      if (!canvas) return;
-
-      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var ctx = canvas.getContext('2d');
-      var fontSize = 16;
-      var chars = '01アイウエオカキクケコサシスセソ{}<>/;=+-*'.split('');
-      var columns, drops;
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = document.documentElement.scrollHeight;
-        columns = Math.floor(canvas.width / fontSize);
-        drops = new Array(columns).fill(0).map(function () {
-          return Math.floor(Math.random() * -50);
-        });
-      }
-
-      function draw() {
-        ctx.fillStyle = 'rgba(16, 23, 27, 0.15)'; /* matches --bg, fades trailing glyphs */
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.font = fontSize + 'px monospace';
-
-        for (var i = 0; i < drops.length; i++) {
-          var text = chars[Math.floor(Math.random() * chars.length)];
-          var x = i * fontSize;
-          var y = drops[i] * fontSize;
-
-          /* Lead character brighter, rest fades toward the accent color */
-          ctx.fillStyle = Math.random() > 0.95 ? '#f2c98a' : 'rgba(224, 164, 88, 0.55)';
-          ctx.fillText(text, x, y);
-
-          if (y > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-          }
-          drops[i]++;
-        }
-      }
-
-      resize();
-      window.addEventListener('resize', resize);
-      window.addEventListener('load', resize);
-
-      if (reduceMotion) {
-        /* Draw a single static frame instead of a continuous loop */
-        draw();
-        return;
-      }
-
-      var interval = setInterval(draw, 50);
-
-      /* Pause when the tab isn't visible to save battery/CPU */
-      document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-          clearInterval(interval);
-        } else {
-          interval = setInterval(draw, 50);
-        }
-      });
-    })();
-  </script>
-
+  <footer class="container"><p>© 2026 Ojo Olugbenga Toheeb</p><p>Built with curiosity. Hosted on GitHub Pages.</p><a href="#home">Back to top ↑</a></footer>
 </body>
 </html>

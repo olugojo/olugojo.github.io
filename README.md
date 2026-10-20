@@ -6,7 +6,7 @@ A responsive, dependency-free static website for GitHub Pages. Open index.html t
 Copy index.html, style.css, and favicon.svg into the root of your olugojo.github.io repository. Commit the files. In repository Settings → Pages, select the branch containing these files and the root folder if branch publishing is used.
 
 ## Make it yours
-- The three project cards are explicitly proposed learning projects, not claims of completed work. Replace each with a real project name, problem, contribution, tools, results, and verified repository/demo link as you complete work.
+- The project section lists all five public GitHub repositories checked on October 20, 2026. SubTracker is labelled as a fork; PayPilot AI is labelled as a demo prototype. Add a card when you publish a new repository.
 - Your name, trainee background, email, GitHub, and LinkedIn were retained from the original site. Confirm contact details before publishing.
 - To add a portrait, place a photo in the repository and use a normal img element with meaningful alt text. The old visitor-local photo upload has been removed because it did not publish a portrait for other visitors.
 - Update the copyright year as needed.
